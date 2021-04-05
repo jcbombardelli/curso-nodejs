@@ -1,5 +1,6 @@
 const { status } = require('../api/controllers/app.controller')
 const authController = require('../api/controllers/auth.controller')
+const userController = require('../api/controllers/user.controller')
 
 const { LoginRequestDTO, LoginResponseDTO } = require('../api/models/dto/auth.dto')
 const Joi = require('joi')
@@ -50,6 +51,13 @@ const login = {
 //     },
 //   }
 // }
+
+
+const newAccount = {
+  method: 'POST',
+  path: 'signup',
+  handler: userController.newAccount
+}
 
 
 module.exports = [ root, login, 
